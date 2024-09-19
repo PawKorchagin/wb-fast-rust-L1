@@ -1,4 +1,4 @@
-use std::{fs::read, io};
+use std::io;
 use tokio::time::{self, Duration};
 use flume::{Receiver, Sender};
 
@@ -35,8 +35,8 @@ async fn main() {
         }
     });
 
-    // Ждем завершения через N секунд
+    // Waiting before shutting down
     time::sleep(duration).await;
 
-    println!("Время истекло, завершаем программу...");
+    println!("The time is over, shutting down...");
 }
